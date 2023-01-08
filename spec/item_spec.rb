@@ -45,6 +45,9 @@ describe Item do
 	context 'iteration 4' do
 		describe '#close_bidding' do
 			it 'closes the item to bidding, does not accept new bids' do
+				attendee1 = double("Attendee 1")
+				attendee2 = double("Attendee 2")
+
 				item1.add_bid(attendee2, 20)
 				item1.add_bid(attendee1, 22)
 	
@@ -54,9 +57,9 @@ describe Item do
 				}
 				expect(item1.bids).to eq(expected)
 
-				item1.close_bid
+				item1.close_bidding
 
-				expect(item.add_bid(attendee2, 24)).to eq('Bidding Closed')
+				expect(item1.add_bid(attendee2, 24)).to eq('Bidding Closed')
 			end
 		end
 	end
