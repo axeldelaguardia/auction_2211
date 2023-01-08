@@ -41,4 +41,26 @@ class Auction
 		end
 		attendees
 	end
+
+	def bidder_info
+		info = {}
+		items_bidded_by
+		bidders.each do |bidder|
+			info[bidder] = {
+				budget: bidder.budget.gsub('$', '').to_i,
+				items: items_bidded_by[bidder]
+			}
+		end
+		info
+	end
+
+	def items_bidded_by
+		attendee_items = Hash.new {|k, v| k[v] = []}
+		items_bidded.each do |item|
+			item.bids.each do |attendee, bid|
+				attendee_items[attendee] << item
+			end
+		end
+		attendee_items
+	end
 end
