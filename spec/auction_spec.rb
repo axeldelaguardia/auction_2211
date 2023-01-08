@@ -61,11 +61,11 @@ describe Auction do
 
 		describe '#unpopular_items' do
 			it 'returns an array with unpopular items' do
-				expect(auction.unpopular_items).to eq([item2, item3, item])
+				expect(auction.unpopular_items).to eq([item2, item3, item5])
 
 				item3.add_bid(attendee2, 15)
 
-				expect(auction.unpopular_items).to eq([item2, item])
+				expect(auction.unpopular_items).to eq([item2, item5])
 			end
 		end
 	end
