@@ -69,8 +69,20 @@ describe Auction do
 			end
 		end
 
+		describe '#items_bidded' do
+			it 'returns an array with unpopular items' do
+				expect(auction.items_bidded).to eq([item1, item4])
+
+				item3.add_bid(attendee2, 15)
+
+				expect(auction.items_bidded).to eq([item1, item3, item4])
+			end
+		end
+
 		describe '#potential_revenue' do
 			it 'returns total possible sales price of the items highest bid' do
+				item3.add_bid(attendee2, 15)
+
 				expect(auction.possible_revenue).to eq(87)
 			end
 		end
