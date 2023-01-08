@@ -31,4 +31,14 @@ class Auction
 			!item.bids.empty?
 		end
 	end
+
+	def bidders
+		attendees = []
+		items_bidded.each do |item|
+			item.bids.keys.each do |bidder|
+				attendees << bidder if !attendees.include?(bidder)
+			end
+		end
+		attendees
+	end
 end
