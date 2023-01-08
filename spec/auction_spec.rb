@@ -16,4 +16,11 @@ describe Auction do
 		end
 	end
 
+	describe '#add_item' do
+		auction.add_item(item1)
+		auction.add_item(item2)
+
+		expect(auction.items).to eq([item1, item2])
+	end
+
 end
