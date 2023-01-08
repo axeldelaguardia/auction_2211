@@ -19,4 +19,16 @@ class Auction
 			item.bids.empty?
 		end
 	end
+
+	def possible_revenue
+		items_bidded.sum do |item|
+			item.bids.values.max
+		end
+	end
+
+	def items_bidded
+		items.find_all do |item|
+			!item.bids.empty?
+		end
+	end
 end
