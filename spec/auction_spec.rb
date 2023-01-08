@@ -120,6 +120,28 @@ describe Auction do
 				expect(auction.bidders).to eq([attendee2, attendee1, attendee3])
 			end
 		end
-	end
 
+		describe '#bidder_info' do
+			it 'returns a hash with keys as attendees and values are hashes with budgets and items bidded on' do
+				item4.add_bid(attendee3, 50)
+
+				expected = {
+					attendee1 => {
+						budget: 50,
+						items: [item1]
+					},
+					attendee2 => {
+						budget: 75,
+						items: [item1, item3]
+					},
+					attendee3 => {
+						budget: 100,
+						items: [item4]
+					}
+				}
+
+				expect(auction.bidder_info).to eq(expected)
+			end
+		end
+	end
 end
