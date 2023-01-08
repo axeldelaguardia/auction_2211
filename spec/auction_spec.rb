@@ -150,5 +150,15 @@ describe Auction do
 				expect(auction.items_bidded_by.values.first).to include(Item)
 			end
 		end
+
+		describe '#date' do
+			it 'creates an auction withn Date.today and can be called on to see what date the auction was created in dd/mm/yyyy' do
+				auction = Auction.new
+				
+				allow(Date).to receive(:today).and_return Date.new(2022, 12, 26)
+				
+				expect(auction.date).to eq("26/12/2022")
+			end
+		end
 	end
 end
