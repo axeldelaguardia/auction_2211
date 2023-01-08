@@ -69,4 +69,14 @@ class Auction
 		date = Date.today
 		"#{date.day}/#{date.month}/#{date.year}"
 	end
+
+	def close_auction
+		auction_info = {}
+		items.each do |item|
+			highest_bid = item.bids.values.max
+			auction_info[item] = item.bids.key(highest_bid)
+			auction_info[item] = 'Not Sold' if item.bids.key(highest_bid).nil?
+		end
+		auction_info
+	end
 end
