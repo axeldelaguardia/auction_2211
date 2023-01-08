@@ -143,5 +143,12 @@ describe Auction do
 				expect(auction.bidder_info).to eq(expected)
 			end
 		end
+
+		describe '#items_bidded_by' do
+			it 'returns a hash with attendee as key and items bidded by attendee as value' do
+				expect(auction.items_bidded_by.keys.first).to be_a(Attendee)
+				expect(auction.items_bidded_by.values.first).to include(Item)
+			end
+		end
 	end
 end
