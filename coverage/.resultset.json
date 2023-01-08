@@ -1,0 +1,37 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/axeld/Documents/turing/1mod/ics/auction_2211/lib/auction.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/axeld/Documents/turing/1mod/ics/auction_2211/lib/item.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/axeld/Documents/turing/1mod/ics/auction_2211/lib/attendee.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1673214283
+  }
+}
