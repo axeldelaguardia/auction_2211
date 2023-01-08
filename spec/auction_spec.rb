@@ -186,7 +186,7 @@ describe Auction do
 			item4.add_bid(attendee3, 50)
 		end
 
-		def '#close_auction' do
+		describe '#close_auction' do
 			it 'closes auction and returns items as keys and who it was sold to as values(returns "Not Sold" otherwise)' do
 				expected = {
 					item1 => attendee1,
