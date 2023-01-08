@@ -68,6 +68,12 @@ describe Auction do
 				expect(auction.unpopular_items).to eq([item2, item5])
 			end
 		end
+
+		describe '#potential_revenue' do
+			it 'returns total possible sales price of the items highest bid' do
+				expect(auction.possible_revenue).to eq(87)
+			end
+		end
 	end
 	
 
