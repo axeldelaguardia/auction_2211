@@ -10,7 +10,7 @@ describe Item do
 		end
 		
 		it 'has attributes' do
-			expect(item.name).to eq('Chalkware Piggy Bank')
+			expect(item1.name).to eq('Chalkware Piggy Bank')
 		end
 	end
 end
