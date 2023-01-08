@@ -1,8 +1,9 @@
 class Auction
-	attr_reader :items
+	attr_reader :items, :date
 
 	def initialize
 		@items = []
+		@date = date
 	end
 
 	def add_item(item)
@@ -62,5 +63,10 @@ class Auction
 			end
 		end
 		attendee_items
+	end
+
+	def date
+		date = Date.today
+		"#{date.day}/#{date.month}/#{date.year}"
 	end
 end
