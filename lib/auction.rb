@@ -13,4 +13,10 @@ class Auction
 		item_names = items.group_by {|item| item.name}
 		item_names.keys
 	end
+
+	def unpopular_items
+		items.find_all do |item|
+			item.bids.empty?
+		end
+	end
 end
